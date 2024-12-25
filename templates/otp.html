@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp</title>
+    <style>
+.banner{
+    background-image: url("https://media.istockphoto.com/id/1479944639/vector/orange-abstract-gradient-background.jpg?s=170667a&w=0&k=20&c=kDWKqtQExCX0xrwKZHv8VEK5cUYLMJufow4sUNuCXpY="); 
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.col-12{
+    margin-left: 35%;
+}
+.hhead{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: transparent;   
+    width: 30%;
+    height: 50%;
+    background-size: cover;
+    border-radius: 5%;
+}
+h1{
+    font-size: 60px;
+}
+
+.formy{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 5%;
+
+}
+.formy label{
+   color: black;  
+   font-size: 30px;
+   font-weight: 200px;
+   border-radius: 2px;
+
+}
+.formy input{
+   padding: 2%;
+   border-radius: 5px;
+   margin-bottom: 1.5%;
+   margin-top: 0.6%;
+   width: 90%;
+}
+.btn{
+    border-color: white;
+    background-color:white;
+    color: black;
+    border-radius: 7px;
+    width: 50%;
+    padding: 2%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 20px;
+    margin-left: 23%;
+}
+.btn:hover{
+    background-color:#f0b04f;
+    color: white;
+    border: 1px solid #8a6f2b
+}
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><h3>{{ message }}</h3></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <section class="banner">
+        <div class="container">
+         <div class="row">
+           <div class="col-12 hhead text-center">
+            <center><h1>OTP</h1></center>
+            <form class="formy" method="POST">
+                <label>Otp</label>    
+                <input type="text" name="otp" placeholder="Enter otp"/>
+                <button class="btn">submit</button>
+            </form>     
+           </div>
+         </div>
+        </div>
+   </section> 
+</body>
+</html>

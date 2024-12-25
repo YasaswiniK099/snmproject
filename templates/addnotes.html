@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addnotes</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+.banner{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5d556b85548d44000178b259/1565880551130-WXEDJUAIUUMMN2NZ0JU0/booksyellowwall.jpg"); 
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.col-12{
+    margin-left: 35%;
+}
+.hhead{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: transparent;
+    width: 30%;
+    height: 50%;
+    background-size: cover;
+    border-radius: 5%;
+}
+.formy{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 30%;
+
+}
+.formy label{
+   color: black;  
+   font-size: 30px;
+   font-weight: 200px;
+   border-radius: 2px;
+
+}
+.formy input{
+   padding: 2%;
+   border-radius: 5px;
+   margin-bottom: 1.5%;
+   margin-top: 0.6%;
+   width: 90%;
+}
+.btn1{
+    border-color: white;
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+    width: 50%;
+    padding: 2%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 20px;
+    margin-left: 23%;
+}
+.btn1:hover{
+    background-color: #e67d8e;
+    color: white;
+    border: 1px solid #e85b73
+}
+</style>
+</head>
+<body>
+  <section class="banner">
+  <nav class="navbar navbar-expand-lg blue">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('dashboard')}}">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Files
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item active" href="{{url_for('uploadfile')}}">Add file</a></li>
+              <li><a class="dropdown-item active" href="{{url_for('viewallfiles')}}">View all files</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Notes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item active" href="{{url_for('addnotes')}}">Addnotes</a></li>
+              <li><a class="dropdown-item active" href="{{url_for('viewallnotes')}}">View all notes</a></li>
+              <li><a class="dropdown-item active" href="{{url_for('getexceldata')}}">Get Excel</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('logout')}}" tabindex="-1" aria-disabled="true">Logout</a>
+          </li>
+        </ul>
+        <form class="d-flex" action="{{url_for('search')}}" method="post">
+          {{session.get('user')}}
+          <input class="form-control me-2" type="text" name="sname" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+   <div class="row">
+     <div class="col-12 hhead text-center">
+      <center><h1>Add a Note</h1></center>
+      <form class="formy" method="POST">
+          <label>Title</label>
+          <input type="text" name="title" placeholder="Title"/>
+          <label>Description</label>   
+          <input type="text" name="description" placeholder="Description"/>
+          <button class="btn1">submit</button>
+      </form>     
+     </div>
+   </div>
+  </div>
+</section>
+</body>  
+</html>

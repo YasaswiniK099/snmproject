@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    <style>
+        .banner{
+            background-image: url("https://img.freepik.com/free-vector/colorful-polygonal-background_1035-8908.jpg");
+            background-position: center;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <section class="banner">
+        <div>
+            <center><h1>WELCOME TO SIMPLE NOTES APP</h1></center>
+            <center><a href="{{url_for('create')}}"><button>REGISTER</button></a></center><br>
+            <center><a href="{{url_for('login')}}"><button>LOGIN</button></a></center>
+        </div>
+    </section>
+</body>
+</html>

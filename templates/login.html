@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+.banner{
+    background-image: url("https://i.pinimg.com/originals/df/f8/94/dff894b64bcc5fca7318e28ef47ce746.jpg"); 
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.col-12{
+    margin-left: 35%;
+}
+.hhead{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: transparent;   
+    width: 30%;
+    height: 50%;
+    background-size: cover;
+    border-radius: 5%;
+}
+h1{
+    font-size: 60px;
+}
+
+.formy{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 5%;
+
+}
+.formy label{
+   color: black;  
+   font-size: 30px;
+   font-weight: 200px;
+   border-radius: 2px;
+
+}
+.formy input{
+   padding: 2%;
+   border-radius: 5px;
+   margin-bottom: 1.5%;
+   margin-top: 0.6%;
+   width: 90%;
+}
+.btn{
+    border-color: white;
+    background-color:white;
+    color: black;
+    border-radius: 7px;
+    width: 50%;
+    padding: 2%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 20px;
+    margin-left: 23%;
+}
+.btn:hover{
+    background-color: #73bad2;
+    color: white;
+    border: 1px solid #231e8b
+}
+
+    </style>
+</head>
+<body>
+    <section class="banner">
+        <div class="container">
+         <div class="row">
+           <div class="col-12 hhead text-center">
+            <center><h1>Login</h1></center>
+            <form class="formy" method="POST">
+                <label>Email</label>    
+                <input type="text" name="email" placeholder="Enter email"/>
+                <label>Password</label>    
+                <input type="password" name="password" placeholder="Enter password"/>
+                <button class="btn">submit</button>
+                <center><a href="forgotpass.html">Forgot password</a></center>
+            </form>     
+           </div>
+         </div>
+        </div>
+   </section> 
+</body>
+</html>
